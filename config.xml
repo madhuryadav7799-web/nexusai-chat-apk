@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.nexusai.chat" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>NexusAI Chat</name>
+    <description>
+        An advanced AI chatbot application featuring multi-model support, conversation branching, and real-time streaming responses.
+    </description>
+    <author email="support@nexusai.app" href="https://nexusai.app">
+        NexusAI Team
+    </author>
+    <content src="index.html" />
+    
+    <!-- Allow all navigation -->
+    <allow-navigation href="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    
+    <!-- Access to all origins -->
+    <access origin="*" />
+    
+    <!-- Android specific settings -->
+    <platform name="android">
+        <preference name="AndroidLaunchMode" value="singleTop" />
+        <preference name="AndroidXEnabled" value="true" />
+        <preference name="android-minSdkVersion" value="24" />
+        <preference name="android-targetSdkVersion" value="34" />
+        
+        <!-- Permissions -->
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        </config-file>
+        
+        <!-- Allow clear text traffic for local development -->
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
+        </config-file>
+    </platform>
+    
+    <!-- Preferences -->
+    <preference name="Orientation" value="default" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="BackgroundColor" value="0xFFFFFFFF" />
+    <preference name="HideKeyboardFormAccessoryBar" value="true" />
+    <preference name="SplashScreenDelay" value="0" />
+    <preference name="Scheme" value="https" />
+</widget>

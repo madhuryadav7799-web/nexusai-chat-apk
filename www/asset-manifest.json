@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/api/preview/9000/static/css/main.085d39f1.css",
+    "main.js": "/api/preview/9000/static/js/main.82a7c827.js",
+    "index.html": "/api/preview/9000/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.085d39f1.css",
+    "static/js/main.82a7c827.js"
+  ]
+}
