@@ -1,4 +1,4 @@
-name: Build Android APK
+name: Build NexusAI Chat APK
 
 on:
   push:
@@ -33,10 +33,11 @@ jobs:
     - name: Install dependencies
       run: npm install
     
+    - name: Add Android Platform
+      run: cordova platform add android@latest
+    
     - name: Build Android APK
-      run: |
-        chmod +x platforms/android/gradlew
-        cordova build android --debug
+      run: cordova build android --debug --verbose
     
     - name: Upload APK
       uses: actions/upload-artifact@v4
@@ -49,5 +50,7 @@ jobs:
       run: |
         APK_PATH="platforms/android/app/build/outputs/apk/debug/app-debug.apk"
         APK_SIZE=$(du -h $APK_PATH | cut -f1)
-        echo "### 📱 NexusAI Chat APK Built!" >> GITHUB_STEP_SUMMARY
-        echo "- **Size:** $APK_SIZE" >> GITHUB_STEP_SUMMARY
+        echo "### 📱 NexusAI Chat APK Built Successfully!" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "- **Size:** $APK_SIZE" >> $GITHUB_STEP_SUMMARY
+        echo "- **Download:** Go to **Artifacts** section below" >> $GITHUB_STEP_SUMMARY
